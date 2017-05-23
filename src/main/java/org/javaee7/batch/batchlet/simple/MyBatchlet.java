@@ -42,7 +42,9 @@ package org.javaee7.batch.batchlet.simple;
 import javax.batch.api.AbstractBatchlet;
 import javax.batch.runtime.BatchStatus;
 import javax.enterprise.context.Dependent;
+import javax.inject.Inject;
 import javax.inject.Named;
+import jp.himeji_cs.javaee.hello_jbatch.MyRequestScopedBean;
 
 /**
  * @author Arun Gupta
@@ -50,9 +52,13 @@ import javax.inject.Named;
 @Dependent
 @Named
 public class MyBatchlet extends AbstractBatchlet {
+
+    @Inject
+    private MyRequestScopedBean myBean;
+
     @Override
     public String process() {
-        System.out.println("Running inside a batchlet");
+        System.out.println(myBean.sayHello());
 
         return BatchStatus.COMPLETED.toString();
     }

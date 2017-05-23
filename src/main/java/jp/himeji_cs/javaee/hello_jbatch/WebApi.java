@@ -1,7 +1,6 @@
 package jp.himeji_cs.javaee.hello_jbatch;
 
 import java.util.Properties;
-
 import javax.batch.operations.JobOperator;
 import javax.batch.runtime.BatchRuntime;
 import javax.batch.runtime.JobExecution;

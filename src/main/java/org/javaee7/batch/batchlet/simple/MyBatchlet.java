@@ -45,6 +45,7 @@ import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import javax.inject.Named;
 import jp.himeji_cs.javaee.hello_jbatch.MyRequestScopedBean;
+import jp.himeji_cs.javaee.hello_jbatch.scope_controll.RequestContextOperation;
 
 /**
  * @author Arun Gupta
@@ -56,6 +57,7 @@ public class MyBatchlet extends AbstractBatchlet {
     @Inject
     private MyRequestScopedBean myBean;
 
+    @RequestContextOperation
     @Override
     public String process() {
         System.out.println(myBean.sayHello());
